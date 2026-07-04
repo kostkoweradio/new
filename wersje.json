@@ -1,0 +1,110 @@
+[
+  {
+    "version": "18.26.00",
+    "date": "2026-08-01",
+    "size": "28.13MB",
+    "ramMinGB": 1,
+    "ramLabel": "1GB+",
+    "androidMin": 7.0,
+    "androidLabel": "7.0+",
+    "note": "Aktualizuj na bieżąco, w przeciwnym razie aplikacja stanie się niestabilna.",
+    "changelog": "Nowy odtwarzacz w tle, poprawiona stabilność strumienia i drobne poprawki interfejsu.",
+    "downloadUrl": "https://kostkoweradio.github.io/pobierz-kostkowe-radio/apk/kostkowe-radio-v18.26.00.apk"
+  },
+  {
+    "version": "18.10.00",
+    "date": "2026-06-18",
+    "size": "27.80MB",
+    "ramMinGB": 1,
+    "ramLabel": "1GB+",
+    "androidMin": 7.0,
+    "androidLabel": "7.0+",
+    "note": "Zalecamy aktualizację do najnowszej wersji, gdy tylko to możliwe.",
+    "changelog": "Dodano powiadomienia o audycjach na żywo oraz poprawki drobnych błędów.",
+    "downloadUrl": "https://kostkoweradio.github.io/pobierz-kostkowe-radio/apk/kostkowe-radio-v18.10.00.apk"
+  },
+  {
+    "version": "17.44.00",
+    "date": "2026-04-22",
+    "size": "26.95MB",
+    "ramMinGB": 1,
+    "ramLabel": "1GB+",
+    "androidMin": 6.0,
+    "androidLabel": "6.0+",
+    "note": "Starsza wersja — zalecamy pobranie nowszej, jeśli urządzenie na to pozwala.",
+    "changelog": "Dodano tryb offline dla podcastów oraz nowy motyw kolorystyczny.",
+    "downloadUrl": "https://kostkoweradio.github.io/pobierz-kostkowe-radio/apk/kostkowe-radio-v17.44.00.apk"
+  },
+  {
+    "version": "17.12.00",
+    "date": "2026-02-10",
+    "size": "25.60MB",
+    "ramMinGB": 0.5,
+    "ramLabel": "512MB+",
+    "androidMin": 6.0,
+    "androidLabel": "6.0+",
+    "note": "Starsza wersja — zalecamy pobranie nowszej, jeśli urządzenie na to pozwala.",
+    "changelog": "Poprawki stabilności strumienia na wolniejszych połączeniach internetowych.",
+    "downloadUrl": "https://kostkoweradio.github.io/pobierz-kostkowe-radio/apk/kostkowe-radio-v17.12.00.apk"
+  },
+  {
+    "version": "16.90.00",
+    "date": "2025-12-05",
+    "size": "24.10MB",
+    "ramMinGB": 0.5,
+    "ramLabel": "512MB+",
+    "androidMin": 5.1,
+    "androidLabel": "5.1+",
+    "note": "Wersja archiwalna — dostępna wyłącznie w historii wersji.",
+    "changelog": "Pierwsza wersja z obsługą podcastów w aplikacji.",
+    "downloadUrl": "https://kostkoweradio.github.io/pobierz-kostkowe-radio/apk/kostkowe-radio-v16.90.00.apk"
+  },
+  {
+    "version": "16.50.00",
+    "date": "2025-09-01",
+    "size": "23.00MB",
+    "ramMinGB": 0.5,
+    "ramLabel": "512MB+",
+    "androidMin": 5.1,
+    "androidLabel": "5.1+",
+    "note": "Wersja archiwalna — dostępna wyłącznie w historii wersji.",
+    "changelog": "Odświeżony interfejs odtwarzacza oraz poprawki błędów.",
+    "downloadUrl": "https://kostkoweradio.github.io/pobierz-kostkowe-radio/apk/kostkowe-radio-v16.50.00.apk"
+  },
+  {
+    "version": "16.00.00",
+    "date": "2025-05-14",
+    "size": "21.75MB",
+    "ramMinGB": 0.5,
+    "ramLabel": "512MB+",
+    "androidMin": 5.0,
+    "androidLabel": "5.0+",
+    "note": "Wersja archiwalna — dostępna wyłącznie w historii wersji.",
+    "changelog": "Dodano ekran startowy oraz podstawowe statystyki słuchania.",
+    "downloadUrl": "https://kostkoweradio.github.io/pobierz-kostkowe-radio/apk/kostkowe-radio-v16.00.00.apk"
+  },
+  {
+    "version": "15.20.00",
+    "date": "2025-01-20",
+    "size": "20.40MB",
+    "ramMinGB": 0.5,
+    "ramLabel": "512MB+",
+    "androidMin": 5.0,
+    "androidLabel": "5.0+",
+    "note": "Wersja archiwalna — dostępna wyłącznie w historii wersji.",
+    "changelog": "Stabilizacja połączenia ze strumieniem i mniejsze zużycie danych.",
+    "downloadUrl": "https://kostkoweradio.github.io/pobierz-kostkowe-radio/apk/kostkowe-radio-v15.20.00.apk"
+  },
+  {
+    "version": "14.00.00",
+    "date": "2024-08-01",
+    "size": "18.90MB",
+    "ramMinGB": 0.5,
+    "ramLabel": "512MB+",
+    "androidMin": 4.4,
+    "androidLabel": "4.4+",
+    "note": "Wersja archiwalna — dostępna wyłącznie w historii wersji.",
+    "changelog": "Pierwsze wydanie aplikacji Kostkowe Radio.",
+    "downloadUrl": "https://kostkoweradio.github.io/pobierz-kostkowe-radio/apk/kostkowe-radio-v14.00.00.apk"
+  }
+]
