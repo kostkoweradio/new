@@ -8,7 +8,7 @@
 (function () {
   'use strict';
 
-  var JSON_PATH = 'wersje.json';
+  var JSON_PATH = '/new/wersje.json';
   var HISTORY_MONTHS = 6;
   var MONTH_NAMES_PL = ['sty', 'lut', 'mar', 'kwi', 'maj', 'cze', 'lip', 'sie', 'wrz', 'paź', 'lis', 'gru'];
 
