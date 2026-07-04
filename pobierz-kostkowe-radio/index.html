@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Informacje o Kostkowym Radio — historia stacji, kontakt i dane techniczne." />
-  <title>Informacje — Kostkowe Radio</title>
+  <meta name="description" content="Pobierz aplikację Kostkowe Radio na Androida — najnowsza wersja, wymagania sprzętowe i historia wydań." />
+  <title>Pobierz aplikację — Kostkowe Radio</title>
   <link rel="icon" href="https://kostkoweradio.github.io/strona-glowna/icon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,7 +33,7 @@
         <a href="informacje.html" class="nav-link">
           <span class="material-symbols-rounded">info</span>Informacje
         </a>
-        <a href="/pobierz-kostkowe-radio/" class="nav-link nav-dl">
+        <a href="pobierz-kostkowe-radio.html" class="nav-link nav-dl">
           <span class="material-symbols-rounded">download</span>Pobierz radio
         </a>
       </nav>
@@ -42,159 +42,136 @@
 
   <main>
 
+    <!-- Stały komunikat u góry strony -->
+    <div class="top-notice">
+      <div class="container top-notice-inner">
+        <span class="material-symbols-rounded" aria-hidden="true">info</span>
+        <p>Jeśli najnowsza wersja nie spełnia wymogów sprzętu, pobierz starszą wersję, wydaną nie później niż 6 miesięcy temu.</p>
+      </div>
+    </div>
+
     <section class="page-hero">
       <div class="container">
         <p class="page-eyebrow">
-          <span class="material-symbols-rounded">info</span>O stacji
+          <span class="material-symbols-rounded">android</span>Aplikacja
         </p>
-        <h1>Informacje</h1>
-        <p>Wszystko, co warto wiedzieć o Kostkowym Radio.</p>
+        <h1>Pobierz Kostkowe Radio</h1>
+        <p>Instaluj, aktualizuj i słuchaj jeszcze wygodniej niż w przeglądarce.</p>
       </div>
     </section>
 
-    <section class="section">
+    <!-- Karta wersji — wszystkie dane wczytywane dynamicznie z wersje.json -->
+    <section class="section section-alt">
       <div class="container">
-        <div class="info-grid">
+        <div class="version-card" id="version-card">
+          <span class="dl-badge" id="version-badge">Ładowanie…</span>
+          <h2 class="version-tagline">Słuchaj płynniej, bez błędów i bez reklam. Zainstaluj już teraz.</h2>
 
-          <div class="info-card">
-            <div class="info-card-head">
-              <span class="material-symbols-rounded">radio</span>
-              <h3>O stacji</h3>
+          <div id="version-notice" class="version-alert" role="status" aria-live="polite" hidden></div>
+
+          <dl class="version-specs">
+            <div class="spec-row">
+              <dt>Wersja</dt>
+              <dd id="app-version">…</dd>
             </div>
-            <p>Kostkowe Radio to internetowa stacja radiowa stworzona z pasji do muzyki i kreatywności. Nadajemy od 2023 roku, oferując autorskie audycje, muzykę 24/7 oraz podcasty dla naszej społeczności słuchaczy.</p>
-            <p>Naszym celem jest tworzenie miejsca, gdzie muzyka spotyka się z dobrą rozmową i oryginalnym contentem tworzonym z sercem.</p>
+            <div class="spec-row">
+              <dt>Rozmiar</dt>
+              <dd id="app-size">…</dd>
+            </div>
+            <div class="spec-row">
+              <dt>RAM</dt>
+              <dd id="app-ram">…</dd>
+            </div>
+            <div class="spec-row">
+              <dt>Wymagania Androida</dt>
+              <dd id="app-android">…</dd>
+            </div>
+          </dl>
+
+          <p class="version-info-note">
+            <span class="material-symbols-rounded" aria-hidden="true">warning</span>
+            <span id="app-note">Wczytywanie informacji o wersji…</span>
+          </p>
+
+          <div id="recommend-wrap" class="recommend-box" role="status" aria-live="polite" hidden>
+            <span class="material-symbols-rounded" aria-hidden="true">tips_and_updates</span>
+            <div>
+              <p id="recommend-text"></p>
+              <a id="recommend-btn" href="#" class="btn btn-outline btn-sm">
+                <span class="material-symbols-rounded">download</span>Pobierz zalecaną wersję
+              </a>
+            </div>
           </div>
 
-          <div class="info-card">
-            <div class="info-card-head">
-              <span class="material-symbols-rounded">broadcast_on_personal</span>
-              <h3>Nadawanie</h3>
-            </div>
-            <ul class="info-list">
-              <li>
-                <span class="li-label">Typ</span>
-                <span class="li-val">Radio internetowe (streaming)</span>
-              </li>
-              <li>
-                <span class="li-label">Dostępność</span>
-                <span class="li-val">24 godziny / 7 dni w tygodniu</span>
-              </li>
-              <li>
-                <span class="li-label">Zasięg</span>
-                <span class="li-val">Cały świat — przez internet</span>
-              </li>
-              <li>
-                <span class="li-label">Odbiór</span>
-                <span class="li-val">Przeglądarka lub aplikacja</span>
-              </li>
-              <li>
-                <span class="li-label">Opłaty</span>
-                <span class="li-val">Bezpłatnie</span>
-              </li>
-            </ul>
-          </div>
+          <a id="download-btn" href="#" class="btn btn-primary btn-lg" download>
+            <span class="material-symbols-rounded">download</span>Pobierz
+          </a>
 
-          <div class="info-card">
-            <div class="info-card-head">
-              <span class="material-symbols-rounded">settings</span>
-              <h3>Dane techniczne</h3>
-            </div>
-            <ul class="info-list">
-              <li>
-                <span class="li-label">Format</span>
-                <span class="li-val">MP3 / AAC</span>
-              </li>
-              <li>
-                <span class="li-label">Jakość</span>
-                <span class="li-val">128 kbps</span>
-              </li>
-              <li>
-                <span class="li-label">Protokół</span>
-                <span class="li-val">HTTP Live Streaming</span>
-              </li>
-              <li>
-                <span class="li-label">Platforma</span>
-                <span class="li-val">GitHub Pages + własny serwer</span>
-              </li>
-              <li>
-                <span class="li-label">Działa na</span>
-                <span class="li-val">PC, telefon, tablet</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="info-card">
-            <div class="info-card-head">
-              <span class="material-symbols-rounded">mail</span>
-              <h3>Kontakt</h3>
-            </div>
-            <p>Masz pytania, sugestie lub chcesz nawiązać współpracę? Napisz do nas — odpiszemy tak szybko, jak to możliwe.</p>
-            <ul class="info-list">
-              <li>
-                <span class="li-label">E-mail</span>
-                <span class="li-val">kontakt@kostkoweradio.pl</span>
-              </li>
-              <li>
-                <span class="li-label">Strona</span>
-                <span class="li-val">kostkoweradio.github.io</span>
-              </li>
-              <li>
-                <span class="li-label">Sprawy</span>
-                <span class="li-val">Ogólne, reklama, współpraca</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="info-card">
-            <div class="info-card-head">
-              <span class="material-symbols-rounded">history</span>
-              <h3>Historia stacji</h3>
-            </div>
-            <ul class="info-list">
-              <li>
-                <span class="li-label">2023</span>
-                <span class="li-val">Pierwsze nadawanie Kostkowego Radia</span>
-              </li>
-              <li>
-                <span class="li-label">2024</span>
-                <span class="li-val">Uruchomienie autorskich audycji i podcastów</span>
-              </li>
-              <li>
-                <span class="li-label">2025</span>
-                <span class="li-val">Rozbudowa ramówki i nowe formaty</span>
-              </li>
-              <li>
-                <span class="li-label">2026</span>
-                <span class="li-val">Nowa wersja serwisu i aplikacja mobilna</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="info-card">
-            <div class="info-card-head">
-              <span class="material-symbols-rounded">download</span>
-              <h3>Aplikacja</h3>
-            </div>
-            <p>Od 1 sierpnia 2026 roku dostępna będzie nowa aplikacja Kostkowego Radia. Słuchaj bez otwierania przeglądarki — z powiadomieniami i trybem tła.</p>
-            <a href="pobierz-kostkowe-radio.html" class="btn btn-primary" style="margin-top: 16px; display: inline-flex;">
-              <span class="material-symbols-rounded">download</span>Pobierz aplikację
-            </a>
-          </div>
-
+          <noscript>
+            <p class="version-error">Włącz JavaScript, aby zobaczyć aktualne informacje o wersji i pobrać aplikację.</p>
+          </noscript>
         </div>
       </div>
     </section>
 
-    <section class="section section-live">
+    <!-- Inne dostępne wersje — generowane dynamicznie (max 6 miesięcy wstecz) -->
+    <section class="section" id="other-versions-wrap" hidden>
       <div class="container">
-        <div class="live-panel">
-          <div class="live-badge">
-            <span class="live-dot live-dot-md"></span>NA ŻYWO
+        <h2 class="section-title">Inne dostępne wersje</h2>
+        <p class="section-sub">Wersje wydane w ciągu ostatnich 6 miesięcy, nadal dostępne do pobrania z tej strony.</p>
+        <ul class="version-pills" id="other-versions"></ul>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Co oferuje aplikacja?</h2>
+        <p class="section-sub">Zaprojektowana z myślą o wygodzie słuchania — bez reklam, bez kompromisów.</p>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <span class="material-symbols-rounded feature-icon">play_circle</span>
+            <h3>Odtwarzanie w tle</h3>
+            <p>Muzyka gra nawet gdy korzystasz z innych aplikacji lub wygaszasz ekran telefonu.</p>
           </div>
-          <h2>Słuchaj teraz</h2>
-          <p>Dołącz do nas w tej chwili — radio gra non stop.</p>
-          <a href="https://kostkoweradio.github.io/radio" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-            <span class="material-symbols-rounded">radio</span>Otwórz radio na żywo
+          <div class="feature-card">
+            <span class="material-symbols-rounded feature-icon">notifications_active</span>
+            <h3>Powiadomienia</h3>
+            <p>Otrzymuj powiadomienia o nadchodzących audycjach i nowych odcinkach podcastów.</p>
+          </div>
+          <div class="feature-card">
+            <span class="material-symbols-rounded feature-icon">podcasts</span>
+            <h3>Podcasty na żądanie</h3>
+            <p>Wbudowany odtwarzacz podcastów — słuchaj naszych nagrań kiedy i gdzie chcesz.</p>
+          </div>
+          <div class="feature-card">
+            <span class="material-symbols-rounded feature-icon">signal_wifi_off</span>
+            <h3>Tryb offline</h3>
+            <p>Pobierz ulubione podcasty i słuchaj bez dostępu do internetu.</p>
+          </div>
+          <div class="feature-card">
+            <span class="material-symbols-rounded feature-icon">phone_android</span>
+            <h3>Szeroka kompatybilność</h3>
+            <p>Działa na większości telefonów i tabletów z Androidem — również starszych modeli.</p>
+          </div>
+          <div class="feature-card">
+            <span class="material-symbols-rounded feature-icon">volunteer_activism</span>
+            <h3>Bezpłatna</h3>
+            <p>Kostkowe Radio jest i pozostaje darmowe — pobieranie i słuchanie bez żadnych opłat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja z linkiem do pełnej historii wersji -->
+    <section class="section">
+      <div class="container">
+        <div class="history-box">
+          <div>
+            <h2 class="section-title" style="margin-bottom:6px;">Szukasz starszej wersji?</h2>
+            <p class="section-sub" style="margin-bottom:0;">Pełna historia wydań Kostkowego Radia — zmiany, poprawki i archiwalne wersje aplikacji.</p>
+          </div>
+          <a href="/pobierz-kostkowe-radio/historia.html" class="btn btn-outline btn-lg">
+            <span class="material-symbols-rounded">history</span>Historia wersji
           </a>
         </div>
       </div>
@@ -213,5 +190,6 @@
   </footer>
 
   <script src="main.js"></script>
+  <script src="pobierz.js"></script>
 </body>
 </html>
