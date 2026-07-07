@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Historia wersji aplikacji Kostkowe Radio — zmiany, poprawki i archiwalne wydania." />
+  <title>Historia wersji — Kostkowe Radio</title>
+  <link rel="icon" href="https://kostkoweradio.github.io/strona-glowna/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,400,1,0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <img src="https://kostkoweradio.github.io/strona-glowna/icon.png" alt="Logo Kostkowe Radio" class="navbar-logo" />
+        <span>Kostkowe Radio</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Otwórz menu" aria-expanded="false">
+        <span class="material-symbols-rounded">menu</span>
+      </button>
+      <nav class="nav-links" id="nav-links" aria-label="Nawigacja główna">
+        <a href="wiadomosci.html" class="nav-link">
+          <span class="material-symbols-rounded">newspaper</span>Wiadomości
+        </a>
+        <a href="ramowka.html" class="nav-link">
+          <span class="material-symbols-rounded">calendar_month</span>Ramówka
+        </a>
+        <a href="informacje.html" class="nav-link">
+          <span class="material-symbols-rounded">info</span>Informacje
+        </a>
+        <a href="pobierz-kostkowe-radio.html" class="nav-link nav-dl">
+          <span class="material-symbols-rounded">download</span>Pobierz radio
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-eyebrow">
+          <span class="material-symbols-rounded">history</span>Archiwum
+        </p>
+        <h1>Historia wersji</h1>
+        <p>Wszystkie wydania aplikacji Kostkowe Radio — od pierwszej wersji do dziś.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="news-grid" id="history-grid">
+          <p class="version-error">Wczytywanie historii wersji…</p>
+        </div>
+        <noscript>
+          <p class="version-error">Włącz JavaScript, aby zobaczyć historię wersji.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="history-box">
+          <div>
+            <h2 class="section-title">Szukasz najnowszej wersji?</h2>
+            <p class="section-sub">Wróć do strony pobierania i zainstaluj aktualną wersję aplikacji.</p>
+          </div>
+          <a href="pobierz-kostkowe-radio.html" class="btn btn-primary btn-lg">
+            <span class="material-symbols-rounded">download</span>Pobierz najnowszą wersję
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="https://kostkoweradio.github.io/strona-glowna/icon.png" alt="" class="footer-logo" aria-hidden="true" />
+        <span>Kostkowe Radio</span>
+      </div>
+      <p class="footer-copy">© 2023–2026 Kostkowe Radio</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    var MONTH_NAMES_PL = ['sty', 'lut', 'mar', 'kwi', 'maj', 'cze', 'lip', 'sie', 'wrz', 'paź', 'lis', 'gru'];
+    var HISTORY_MONTHS = 6;
+
+    function formatDatePL(iso) {
+      var d = new Date(iso + 'T00:00:00');
+      return d.getDate() + ' ' + MONTH_NAMES_PL[d.getMonth()] + ' ' + d.getFullYear();
+    }
+
+    function monthsBefore(iso, months) {
+      var d = new Date(iso + 'T00:00:00');
+      d.setMonth(d.getMonth() - months);
+      return d;
+    }
+
+    function renderVersions(list) {
+      var grid = document.getElementById('history-grid');
+      if (!grid) return;
+
+      var sorted = list.slice().sort(function (a, b) { return new Date(b.date) - new Date(a.date); });
+      var latest = sorted[0];
+      var cutoff = monthsBefore(latest.date, HISTORY_MONTHS);
+
+      grid.innerHTML = '';
+
+      sorted.forEach(function (v) {
+        var isLatest = v.date === latest.date;
+        var isArchived = new Date(v.date + 'T00:00:00') < cutoff;
+
+        var badge = '';
+        if (isLatest) {
+          badge = '<span class="dl-badge">Najnowsza wersja</span>';
+        } else if (isArchived) {
+          badge = '<span class="dl-badge">Archiwalna</span>';
+        }
+
+        var card = document.createElement('article');
+        card.className = 'news-card';
+        card.innerHTML =
+          '<p class="news-date">' + formatDatePL(v.date) + '</p>' +
+          '<h3>v' + v.version + '</h3>' +
+          badge +
+          '<p>Rozmiar: ' + v.size + ' · RAM: ' + v.ramLabel + ' · Android: ' + v.androidLabel + '</p>' +
+          '<p>' + v.changelog + '</p>' +
+          '<a href="/pobierz-kostkowe-radio.html?date=' + v.date + '" class="news-more">' +
+            'Zobacz tę wersję <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>' +
+          '</a>';
+
+        grid.appendChild(card);
+      });
+    }
+
+    async function init() {
+      var grid = document.getElementById('history-grid');
+      if (!grid) return;
+      try {
+        var res = await fetch('wersje.json');
+        if (!res.ok) throw new Error('Błąd sieci');
+        var data = await res.json();
+        if (!Array.isArray(data) || !data.length) throw new Error('Brak danych');
+        renderVersions(data);
+      } catch (err) {
+        grid.innerHTML = '<p class="version-error">Nie udało się wczytać historii wersji. Spróbuj odświeżyć stronę.</p>';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+  })();
+  </script>
+</body>
+</html>
